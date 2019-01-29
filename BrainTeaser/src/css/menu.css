@@ -1,0 +1,39 @@
+.root {
+    -fx-background-color: black;
+    -fx-background-image: url("http://www.baltana.com/files/wallpapers-5/Gradient-Background-Best-Wallpaper-16349.jpg");
+    -fx-background-position: center center;
+    -fx-background-repeat: stretch;
+}
+
+.button {
+    -fx-background-color:rgb(50,50,50);
+    -fx-background-insets: 0,1,2,3;
+    -fx-background-radius: 3,2,2,2;
+    -fx-padding: 12 30 12 30;
+    -fx-text-fill: rgb(250,250,250);
+    -fx-font-size: 12px;
+    -fx-min-width: 250px;
+    -fx-min-height: 12px;
+}
+.button:hover {
+    -fx-background-color:rgb(75,75,75);
+}
+#DescriptionLevel {
+    -fx-background-color:rgb(25,25,25);
+    -fx-text-fill: rgb(75,75,75);
+}
+
+
+.label {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: rgb(250, 250, 250);
+}
+
+#marg-t-20 {
+    margin-top: 20px;
+}
+
+.pane {
+    -fx-background-color: red;
+}

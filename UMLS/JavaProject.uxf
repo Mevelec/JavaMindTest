@@ -1,0 +1,628 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>9</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1053</x>
+      <y>1746</y>
+      <w>234</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>Model
+--
+- GridsManager gridsManager
+
+--
++ Model()
+
+--
++ GridsManager getGridsManager()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1044</x>
+      <y>1323</y>
+      <w>234</w>
+      <h>252</h>
+    </coordinates>
+    <panel_attributes>Controller
+--
+- int 				selectedObjective = 0
+- bool 				dragVa&amp;lid = false
+- Vector&lt;int[]&gt;   selectedBuffer
+- int 				sTime =0
+- bool 				isStarted = false
+- Timeline 			timer
+- Model 				model
+- View 				view
+
+--
++ Controller(Model model, View view)
+
++ void LevelsController()
++ void PlayControl()
++ void MenuControl()
+- formatPos(int x, int y)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1053</x>
+      <y>918</y>
+      <w>234</w>
+      <h>252</h>
+    </coordinates>
+    <panel_attributes>View
+--
+- Stage stage
+- Menu menu
+- Levels levels
+- Play play
+
+--
++ View(Stage primaryStage)
+
++ void showMenu()
++ void showPlay()
++ void showLevels()
+
+--
++ Menu getMenu()
++ Levels getLevels()
++ Play getPlay()
+ </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1503</x>
+      <y>1665</y>
+      <w>234</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>GridsManager
+--
+- int higherLevel
+- Vector&lt;Grid&gt; gridList
+- int indPlay = 0
+
+--
++ GridsManager()
+
++ void setPlay( int ind )
++ Grid Play()
++ void loadLevels()
++ String[] getGridsName()
++ Grid getGrid(int ind )
+
+--
++ int getHigherLevel()
++ void setHigherLevel( int ind )
++ int getIndPlay()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1908</x>
+      <y>1575</y>
+      <w>234</w>
+      <h>459</h>
+    </coordinates>
+    <panel_attributes>Grid
+--
+- String name
+- TilesFactory tilesFactory
+- Vector&lt; Vector&lt; Tile &gt; &gt; grid
+- int X
+- int Y
+- int nbObjectives
+- int nbWarps
+- int nbBonusObjectives
+- int nbWalls
+- bool[] ObjectivesValid
+
+--
++ Grid(int X, int Y)
+
++ void setGrid( double[][] gridArray )
++ void reset()
++ bool validObjective ( int nb )
+
+
+--
++ Vector &lt; Vector &lt; Tile &gt; &gt; getGrid()
++ int getNbObjectives()
++ String getName()
++ void setName( String name)
++ int getNbWarps()
++ void setNbWarps( int nb )
++ int getNbBonusObjectives()
++ void setNbObjectives( int nb )
++ int getNbwalls()
++ void setNbWalls( int nb )
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>486</x>
+      <y>1431</y>
+      <w>252</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>Main
+--
++ static void main( String[] args )
++ void start( Stage primaryStage )</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1530</x>
+      <y>2106</y>
+      <w>189</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>TilesFactory
+--
+- int nbObjectivesCreated = 0
+
+--
++ TilesFactory()
+
++ Tile getTile( String tileType )
++ Tile[] getTwin( String tileType )
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1386</x>
+      <y>2412</y>
+      <w>189</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>ObjectiveTile
+--
+
+--
++ ObjectiveTile()
+
+--
+
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1539</x>
+      <y>2637</y>
+      <w>189</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>Abstract :: Tile
+--
+- int objectiveNb = 0
+# String type
+
+--
+
+--
++ int getObjectiveNb()
++ void setObjectiveNb( int nb )
++ String getType()
+
+
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1647</x>
+      <y>2412</y>
+      <w>189</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>DefaultTile
+--
+
+--
++ DefaultTile()
+
+--
+
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>792</x>
+      <y>0</y>
+      <w>783</w>
+      <h>360</h>
+    </coordinates>
+    <panel_attributes>Levels
+--
+- Scene scene
+- Button ButtonMenu
+- Button buttonPlay
+- ListView&lt; String &gt; lsit
+- GridPane DescriptionPane
+- Label selectedName
+- Label selectedFormat
+- Label selectedNbObjectives
+- Label selectedNbWarps
+- Label selectedNbBonusObjectives
+- Label selectedNbWalls
+
+--
++ Levels( double width, double height )
+
++ void updateDescription( String Name, String Format, String NbObjectives, String NbWarps, String NbBonusObjectives, String NbWalls )
+
+--
++ Button getButtonMenu()
++ Scene getScene()
++ ListView&lt; String &gt; getList()
++ void setList( String[] items )
++ Button getButtonPlay()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>531</x>
+      <y>387</y>
+      <w>315</w>
+      <h>351</h>
+    </coordinates>
+    <panel_attributes>Menu
+--
+- Scene scene
+- Button buttonPlay
+- Button buttonLevels
+- Button buttonQuit 
+
+--
++ Menu(double width, double height )
+
+--
++ Button getButtonPlay()
++ Button getButtonLevels()
++ Button getButtonQuit()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1620</x>
+      <y>378</y>
+      <w>333</w>
+      <h>387</h>
+    </coordinates>
+    <panel_attributes>Play
+--
+- Scene scene
+- Button buttonMenu
+- Label timerLabel
+- Canvas canvas
+- Vector&lt; String &gt; objectivesColor
+- int X
+- int Y
+- double height
+- double width
+- GrphicContext g
+
+--
++ Play( double width, double height )
+
++ void selectedTemp( int x, int y, int numColor )
++ void win()
++ void UpdateTimer( int val )
+
+--
++ Scene getScene()
++ Button getButtonMenu()
++ Canvas getCanvas()
++ void setObjectivesColor( int nbObjectives )
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>837</x>
+      <y>495</y>
+      <w>369</w>
+      <h>441</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1, 1
+m2=1, 1
+composed</panel_attributes>
+    <additional_attributes>380.0;470.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1170</x>
+      <y>351</y>
+      <w>81</w>
+      <h>585</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1, 1
+m2=1, 1
+composed</panel_attributes>
+    <additional_attributes>10.0;630.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1170</x>
+      <y>531</y>
+      <w>468</w>
+      <h>405</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1, 1
+m2=1, 1
+composed</panel_attributes>
+    <additional_attributes>10.0;430.0;500.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>729</x>
+      <y>1008</y>
+      <w>351</w>
+      <h>486</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1, 1
+m2=1, 1
+use</panel_attributes>
+    <additional_attributes>10.0;520.0;360.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>729</x>
+      <y>1458</y>
+      <w>333</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1, 1
+m2=1, 1
+use</panel_attributes>
+    <additional_attributes>10.0;20.0;350.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>729</x>
+      <y>1467</y>
+      <w>351</w>
+      <h>387</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1, 1
+m2=1, 1
+use</panel_attributes>
+    <additional_attributes>10.0;10.0;360.0;410.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1152</x>
+      <y>1161</y>
+      <w>81</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1, 1
+m2=1, 1
+composed</panel_attributes>
+    <additional_attributes>10.0;180.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1143</x>
+      <y>1566</y>
+      <w>81</w>
+      <h>198</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1, 1
+m2=1, 1
+composed</panel_attributes>
+    <additional_attributes>10.0;200.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1278</x>
+      <y>1782</y>
+      <w>243</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1, 1
+m2=1, 1
+use</panel_attributes>
+    <additional_attributes>10.0;20.0;250.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1728</x>
+      <y>1773</y>
+      <w>198</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1, n
+m2=1, 1
+use</panel_attributes>
+    <additional_attributes>10.0;20.0;200.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1593</x>
+      <y>1926</y>
+      <w>45</w>
+      <h>198</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1, 1
+m2=1, 1
+use</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;200.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1467</x>
+      <y>2547</y>
+      <w>171</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>170.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1611</x>
+      <y>2547</y>
+      <w>153</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;100.0;150.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1359</x>
+      <y>2385</y>
+      <w>513</w>
+      <h>432</h>
+    </coordinates>
+    <panel_attributes>TilesFactory
+
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1602</x>
+      <y>2241</y>
+      <w>27</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1602</x>
+      <y>2025</y>
+      <w>441</w>
+      <h>378</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>470.0;10.0;10.0;400.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>45</x>
+      <y>2439</y>
+      <w>612</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>Property
+--
+- String mName
+- int mValue
+- String mActivation
+- int mActivationValue
+- int mInitialValue
+
+--
+  public function Property( String theName, intt theInitialValue , String theActivation, int theActivationValue)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>36</x>
+      <y>2214</y>
+      <w>324</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>Achievement
+--
+- String name
+- Property[] propertiesList
+- bool unlocked
+
+--
++ function Achievement( String Id, Property[] propertiesList )</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>261</x>
+      <y>1917</y>
+      <w>486</w>
+      <h>225</h>
+    </coordinates>
+    <panel_attributes>AchievementManager
+--
++ static const String ACTIVE_IF_GREATER_THAN  = "&gt;"
++ static const String ACTIVE_IF_LESS_THAN  = "&lt;"
++ static const String ACTIVE_IF_EQUALS_TO  = "=="
+- var Map&lt; Property &gt; propertiesMap
+- var Map&lt; Achievement &gt; achievementsMap
+
+--
++ function AchievementManager()
+
++ void createProperty( String name, int initialValue, String activationMode, int value )
++ void createAchievement( String name, Property[] properties )
++ int getValue( String propertyName ) 
++ void addValue(String propertyName, int value )
+public function setValue(theProp :*, theValue :int, theIgnoreActivationContraint :Boolean = false) :void {
+private function doSetValue(theProp :String, theValue :int, theIgnoreActivationContraint :Boolean = false) :void {
+public function resetProperties(theTags :Array = null) :void {
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

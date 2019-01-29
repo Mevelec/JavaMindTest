@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLSequenceAllInOne</id>
+    <coordinates>
+      <x>20</x>
+      <y>20</y>
+      <w>740</w>
+      <h>410</h>
+    </coordinates>
+    <panel_attributes>title=New all in one sequence diagram \nTitle with normal \\n and \nNew Line
+desc=x = 1 \ny = 0
+autoTick=false
+obj=Lifeline A~a 
+obj=Lifeline B\nnew\nLine~b 
+obj=Lifeline C~c
+gate-&gt;a.a1 :message from a gate
+c.c1-&gt;gate :message to a gate
+tick=
+found-&gt;b.b1
+b.b1&lt;a.a1
+tick=
+c-&gt;c + :self message
+tick=
+on=c;
+a.a2.&gt;b
+c.c1&gt;a.a2
+tick=
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

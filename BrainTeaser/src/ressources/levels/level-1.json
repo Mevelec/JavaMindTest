@@ -1,0 +1,22 @@
+{
+    "header": {
+            "name": "level-1",
+            "grid": {
+                "dimension": {
+                        "X": 5,
+                        "Y": 5
+                },
+                "nbObjectives": 2,
+                "nbWarps": 0,
+                "nbBonusObjectives": 0,
+                "nbWalls": 0
+            }
+    },
+    "grid": [
+            [1, 0, 0, 0, 0],
+            [0, 0, 0, 0, 2],
+            [0, 0, 0, 0, 0],
+            [0, 0, 1, 0, 0],
+            [2, 0, 0, 0, 0]
+    ]
+}
